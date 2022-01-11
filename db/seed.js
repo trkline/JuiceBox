@@ -62,7 +62,7 @@ async function createTables(){
     throw error; 
   }
 }
-
+ 
 async function createInitialUsers() {
   try {
     console.log('Starting to create new users...');
