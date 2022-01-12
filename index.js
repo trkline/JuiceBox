@@ -9,6 +9,9 @@ const {client} = require('./db');
 client.connect();
 
 server.use(morgan('dev'));
+
+server.use(express.json());
+
 server.use('/api', apiRouter);
 // console.log(process.env.JWT_SECRET);
 server.listen(PORT, () => {

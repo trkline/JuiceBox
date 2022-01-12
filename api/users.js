@@ -23,7 +23,9 @@ usersRouter.get('/', async (req, res) => {
 });
 
 usersRouter.post('/login', async (req, res, next) => {
+
   const { username, password } = req.body;
+  
 
   // request must have both
   if (!username || !password) {
@@ -38,7 +40,7 @@ usersRouter.post('/login', async (req, res, next) => {
 
     if (user && user.password == password) {
       // create token & return to user
-      res.send({ message: "you're logged in!" }, token);
+      res.send({ message: "you're logged in!", token });
     } else {
       next({ 
         name: 'IncorrectCredentialsError', 
